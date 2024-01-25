@@ -13,7 +13,7 @@ h1 {
     color: #333;
 }
 
-.weather-info {
+#weather-info {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
