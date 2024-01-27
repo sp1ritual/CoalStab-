@@ -19,3 +19,18 @@ function generateData() {
 generateData();
 
 setInterval(generateData, 3000);
+
+var sidebar = document.querySelector('.sidebar');
+var mainContent = document.querySelector('.main-content');
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('mousemove', function(event) {
+    if (event.clientX < 100) { 
+      sidebar.classList.add('open');
+      mainContent.style.marginLeft = '300px';
+    } else {
+      sidebar.classList.remove('open');
+      mainContent.style.marginLeft = '0';
+    }
+  });
+});
