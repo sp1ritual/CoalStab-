@@ -1,7 +1,5 @@
 #include "slopesafety.h"
-#include <iostream>
-#include <cmath>
-#include <cstdlib>
+#include "mainheader.h"
 slopesafety::slopesafety(double c_val, double A_val, double sigma_val, double N_val, double y_val, double V_val){
     c = c_val;
     A = A_val;
