@@ -28,23 +28,31 @@ public:
     }
 };
 
+
 int main() {
     setlocale(LC_ALL, "Russian"); 
     srand(static_cast<unsigned int>(time(0)));
 
     SensorEmulator humiditySensor(0, 100); // влажность
-    SensorEmulator temperatureSensor(-20, 100); // температура
-    SensorEmulator frictionSensor(0, 30); // трение
-    SensorEmulator dumpHeightSensor(0, 100); // Высота отвала
-    SensorEmulator dumpAngleSensor(0, 90); // Угол наклона отвала
-    SensorEmulator dumpLengthSensor(10, 100); // Длина отвала
-    SensorEmulator dumpWidthSensor(5, 50); // Ширина отвала
-    SensorEmulator dumpSurfaceAreaSensor(100, 500); // Площадь поверхности отвала
-    SensorEmulator soilStrengthSensor(10, 50); // Прочность грунта
-    SensorEmulator soilDensitySensor(1000, 2000); // Плотность грунта
-    SensorEmulator soilFrictionAngleSensor(20, 45); // Угловой коэффициент внутреннего трения грунта
-    SensorEmulator precipitationSensor(0, 50); // Датчик количества осадков
-    SensorEmulator windSpeedSensor(0, 30); // Скорость ветра
+    SensorEmulator temperatureSensor(-30, 100); // температура
+    SensorEmulator precipitationSensor(0, 70); // Датчик количества осадков
+    SensorEmulator windSpeedSensor(0, 50); // Скорость ветра
+    SensorEmulator Rd(0, 100); //dynamicstability
+    SensorEmulator Pd(0, 100);
+    SensorEmulator k(0, 100);
+    SensorEmulator V(0, 100);
+    SensorEmulator C(0, 100); //safetyfactor
+    SensorEmulator F(0, 100);
+    SensorEmulator h(0, 100); //slopeangle 
+    SensorEmulator L(0, 100);
+    SensorEmulator c(0, 100); //slopesafety
+    SensorEmulator A(0, 100);
+    SensorEmulator sigma(0, 100);
+    SensorEmulator N(0, 100);
+    SensorEmulator y(0, 100);
+    SensorEmulator T(0, 100); //stability
+    SensorEmulator R(0, 100);
+    SensorEmulator H(0, 100); //staticstability
 
 
     int row = 0;
@@ -53,37 +61,54 @@ int main() {
     std::ofstream outputFile;
     do {
         std::cout << "Меню:\n";
-        std::cout << "1. Обновить данные с датчиков\n";
-        std::cout << "2. Показать данные с датчиков\n";
-        std::cout << "3. Сохранить полученные данные в БД\n";
-        std::cout << "4. Выход\n";
+        std::cout << "1. Показать данные с датчиков\n";
+        std::cout << "2. Обновить данные с датчиков\n";
+        std::cout << "3. Значения переменных\n";
+        std::cout << "4. Обновить значение переменных\n";
+        std::cout << "5. Сохранить полученные данные в БД\n";
+        std::cout << "6. Выход\n";
         std::cout << "Введите свой выбор: ";
         std::cin >> choice;
 
         switch (choice) {
         case 1:
+            std::cout << "Влажность: " << humiditySensor.getCurrentValue() << "°C, Температура: " << temperatureSensor.getCurrentValue()
+            << "°, Количество осадков: " << precipitationSensor.getCurrentValue() << "mm, Скорость ветра: " << windSpeedSensor.getCurrentValue() << "m/s" << std::endl;
+            break;
+        case 2:
             humiditySensor.updateValue();
             temperatureSensor.updateValue();
-            frictionSensor.updateValue();
-            dumpHeightSensor.updateValue();
-            dumpAngleSensor.updateValue();
-            dumpLengthSensor.updateValue();
-            dumpWidthSensor.updateValue();
-            dumpSurfaceAreaSensor.updateValue();
-            soilStrengthSensor.updateValue();
-            soilDensitySensor.updateValue();
-            soilFrictionAngleSensor.updateValue();
             precipitationSensor.updateValue();
             windSpeedSensor.updateValue();
             break;
-        case 2:
-            std::cout << "Влажность: " << humiditySensor.getCurrentValue() << "%, Температура: " << temperatureSensor.getCurrentValue() << "°C, Трение: " << frictionSensor.getCurrentValue() << std::endl;
-            std::cout << "Высота отвала: " << dumpHeightSensor.getCurrentValue() << "m, Угол наклона отвала: " << dumpAngleSensor.getCurrentValue() << "°, Длина отвала: " << dumpLengthSensor.getCurrentValue() << "m, Ширина отвала: " << dumpWidthSensor.getCurrentValue() << "m" << std::endl;
-            std::cout << "Площадь поверхности отвала: " << dumpSurfaceAreaSensor.getCurrentValue() << "sq.m, Прочность грунта: " << soilStrengthSensor.getCurrentValue() << "MPa, Плотность грунта: " << soilDensitySensor.getCurrentValue() << "kg/m^3" << std::endl;
-            std::cout << "Угловой коэффициент внутреннего трения грунта: " << soilFrictionAngleSensor.getCurrentValue() << "°, Количество осадков: " << precipitationSensor.getCurrentValue() << "mm, Скорость ветра: " << windSpeedSensor.getCurrentValue() << "m/s" << std::endl;
-           
-            break;
         case 3:
+            std::cout << " Rd: " << Rd.getCurrentValue() << " Pd: " << Pd.getCurrentValue() << " k: " << k.getCurrentValue() << " V: " << V.getCurrentValue() << std::endl;
+            std::cout << " C: " << C.getCurrentValue() << " F: " << F.getCurrentValue() << std::endl;
+            std::cout << " h: " << h.getCurrentValue() << " L: " << L.getCurrentValue() << std::endl;
+            std::cout << " c: " << c.getCurrentValue() << " A: " << A.getCurrentValue() << " sigma: " << sigma.getCurrentValue() << " N: " << N.getCurrentValue() << " y: " << y.getCurrentValue() << " V: " << V.getCurrentValue() << std::endl;
+            std::cout << " T: " << T.getCurrentValue() << " R: " << R.getCurrentValue() << std::endl;
+            std::cout << " c: " << c.getCurrentValue() << " A: " << A.getCurrentValue() << " N: " << N.getCurrentValue() << " y: " << y.getCurrentValue() << " H: " << H.getCurrentValue() << std::endl;
+            std::cout << " A: " << A.getCurrentValue() << " F: " << F.getCurrentValue() << std::endl;
+            break;
+        case 4:
+            Rd.updateValue();
+            Pd.updateValue();
+            k.updateValue();
+            V.updateValue();
+            C.updateValue();
+            F.updateValue();
+            h.updateValue();
+            L.updateValue();
+            c.updateValue();
+            A.updateValue();
+            sigma.updateValue();
+            N.updateValue();
+            y.updateValue();
+            T.updateValue();
+            R.updateValue();
+            H.updateValue();
+            break;
+        case 5:
             outputFile.open("БД.txt", std::ios::app);
             if (outputFile.is_open()) {
             outputFile.close();
@@ -93,7 +118,7 @@ int main() {
         default:
             std::cout << "Неверный выбор. Попробуйте еще раз.\n";
         }
-    } while (choice != 4);
+    } while (choice != 6);
 
     return 0;
 }
