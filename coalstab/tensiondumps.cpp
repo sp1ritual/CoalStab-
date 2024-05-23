@@ -1,24 +1,21 @@
 #include "mainheader.h"
-class tensiondumps {
+
+class TensionDumps {
 public:
-    double calucaltion(double A_val,double F_val){
-        A = A_val;
-        F = F_val;
-        double sigma = F/A;
-        if (A != 0){
-            return sigma;
+    TensionDumps(double area_val = 0, double force_val = 0) : area(area_val), force(force_val) {}
+
+    double calculateStress(double area_val, double force_val) {
+        area = area_val;
+        force = force_val;
+
+        if (area != 0) {
+            double stress = force / area;
+            return stress;
         } else {
-            return 0;
+            return 0;  
         }
     }
 
 private:
-double A,F;
+    double area, force;  
 };
-int main(){
-    tensiondumps obj;
-    double result = obj.calucaltion(35.2,21.4);
-    std::cout<<"Result: "<<result<<std::endl;
-    
-    return 0;
-}

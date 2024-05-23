@@ -1,15 +1,19 @@
 #ifndef STATICSTABILITY_H
 #define STATICSTABILITY_H
-class staticstability{
+
+class StaticStability {
 public:
-// F = R/F
-// R = c * A * N = c * y * A^2
-// N = y * A
-// F = H
-double R,F,c,A,N,y,H;
-staticstability(double c_val, double A_val,double N_val,double y_val, double H_val);
-double delaminationresistance();//R
-double horizonforce();//F
-double calculationresult();
+    // F = R/F
+    // R = c * A * N = c * y * A^2
+    // N = y * A
+    // F = H
+    double resistance, horizontalForce, cohesion, area, normalStress, unitWeight, height;
+
+    StaticStability(double cohesion_val, double area_val, double normalStress_val, double unitWeight_val, double height_val);
+
+    double calculateDelaminationResistance(); // R
+    double calculateHorizontalForce(); // F
+    double calculateStabilityFactor(); // R/F
 };
+
 #endif

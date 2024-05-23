@@ -1,23 +1,19 @@
 #include "mainheader.h"
-class slopeangle {
+#include <cmath>  // Для использования функции atan
+
+class SlopeAngleCalculator {
 public:
-    double Calslopeangle(double h_val,double L_val){
-        h = h_val;
-        L = L_val;
-        double O = atan(h/L);
-        if (L !=0){
-            return O;
+    double calculateSlopeAngle(double height, double length) {
+        this->height = height;
+        this->length = length;
+        if (length != 0) {
+            double angle = atan(height / length);
+            return angle;
         } else {
             return 0;
         }
     }
 
 private:
-double h,L;
+    double height, length;
 };
-int main(){
-    slopeangle obj;
-    double result = obj.Calslopeangle(30.0,45.5);
-    std::cout<<"Equals : "<<result<<std::endl;
-    return 0;
-}

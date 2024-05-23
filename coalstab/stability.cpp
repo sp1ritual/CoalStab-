@@ -1,23 +1,21 @@
 #include "mainheader.h"
-class stability{
+
+class Stability {
 public:
-    double calculatiob(double T_val, double R_val){
-        T = T_val;
-        R = R_val;
-        double F = T/R;
-        if (R != 0){
-        return F;
-        }
-        else {
-            return 0;
+    Stability(double tension_val = 0, double resistance_val = 0) : tension(tension_val), resistance(resistance_val) {}
+
+    double calculateStability(double tension_val, double resistance_val) {
+        tension = tension_val;
+        resistance = resistance_val;
+
+        if (resistance != 0) {
+            double stabilityFactor = tension / resistance;
+            return stabilityFactor;
+        } else {
+            return 0;  
         }
     }
+
 private:
-    double T,R;
+    double tension, resistance;  
 };
-int main(){
-    stability obj;
-    double F = obj.calculatiob(40.8,54.7);
-    std::cout<<"Equals: "<<F<<std::endl;
-    return 0;
-}

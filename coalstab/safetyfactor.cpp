@@ -1,24 +1,20 @@
 #include "mainheader.h"
-class safetyfactor {
+#include <iostream>
+
+class SafetyFactor {
 public:
 
-double Calsafetyfactor(double C_val,double F_val){
-    C = C_val;
-    F = F_val;
-    double Fac = C/F;
-    if (F != 0){
-        return Fac;
-    } else {
-        return 0;
+    double calculateSafetyFactor(double cohesion, double force) {
+        this->cohesion = cohesion;
+        this->force = force;
+        double safetyFactor = cohesion / force;
+        if (force != 0) {
+            return safetyFactor;
+        } else {
+            return 0;
+        }
     }
-}
 
 private:
-double C,F;
+    double cohesion, force;
 };
-int main(){
-    safetyfactor obj;
-    double result = obj.Calsafetyfactor(43.77,97.5);
-    std::cout<<"Equals: "<<result<<std::endl;
-    return 0;
-}
