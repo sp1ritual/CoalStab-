@@ -258,54 +258,54 @@ int main() {
         return 1;
     }
     // Работа с DynamicStability
-    void* Dstability = create(getRandomNumber(0.1,10.0),getRandomNumber(0.4,10.0),getRandomNumber(0,15.0),getRandomNumber(1.0,15.0));
+    void* Dstability = create(getRandomNumber(0,100),getRandomNumber(0,100),getRandomNumber(0,100),getRandomNumber(0,1000));
     double Dstability_result = calculate(Dstability);
     std::cout<<"------------------"<<std::endl;
-    std::cout << "Dynamic Stability Factor: " << Dstability_result << std::endl;
+    std::cout << "Dynamic Stability Factor: " << Dstability_result << "%" << std::endl; // % - означает, что на каждые "n" метров оризонтального расстояния высота поверхности отвала изменяется на "n" метров
     std::cout<<"------------------"<<std::endl;
     destroy(Dstability);
 
     // Работа с библиотекой SafetyFactor
     void* safetyFactorObj = createSafetyFactor();
-    double safety_result = calculateSafety(safetyFactorObj,getRandomNumber(0,100),getRandomNumber(20,50));
-    std::cout << "Safety Factor: " << safety_result << std::endl;
+    double safety_result = calculateSafety(safetyFactorObj,getRandomNumber(0,1.3),getRandomNumber(0,2));
+    std::cout << "Safety Factor: " << safety_result << "SF" << std::endl;  // обозначается абривиатурой, тк это безразмерная величина, которая обозначает соотношение между максимально допустимой нагрузкой или напряжением и фактической нагрузкой или напряжением
     std::cout<<"------------------"<<std::endl;
     destroySafetyFactor(safetyFactorObj);
 
     // Работа с библиотекой SlopeAngle
-    void* slope = createSlopeAngle(getRandomNumber(0.1,3.9),getRandomNumber(0.119,12.7));
+    void* slope = createSlopeAngle(getRandomNumber(0,30),getRandomNumber(0,90));
     double slope_result = calculateAngle(slope);
-    std::cout << "Slope Angle: " << slope_result << std::endl;
+    std::cout << "Slope Angle: " << slope_result << "°" << std::endl; // угол
     std::cout<<"------------------"<<std::endl;
     destroySlopeAngle(slope);
 
     // Работа с библиотекой Stability
     void* stability = createStability();
-    double stability_result = calcStability(stability,getRandomNumber(1.0,100.0),getRandomNumber(6.0,47.0));
-    std::cout << "Stability: " << stability_result << std::endl; // Проблемы в расчетах
+    double stability_result = calcStability(stability,getRandomNumber(0,25),getRandomNumber(0,25));
+    std::cout << "Stability: " << stability_result << "FS" << std::endl; // обозначается абривиатурой фактора безопасности - SF. аналогично с SafetyFactor
     std::cout<<"------------------"<<std::endl;
     destroyStability(stability);
 
     // Работа с библиотекой Tensiondumps
     void* tension = createTension();
-    double tension_result = calculateTension(tension,getRandomNumber(0.1,27.0),getRandomNumber(0.2,12.0));
-    std::cout<<"Tension: "<<tension_result<<std::endl;
+    double tension_result = calculateTension(tension,getRandomNumber(0,500),getRandomNumber(0,1000));
+    std::cout<<"Tension: "<<tension_result<< "Н" <<std::endl; // измеряется в ньютонах, либо килоньютонах
     destroyTension(tension);
 
     // Работа с либой StaticStability
-    void* statstability = createStaticStability(getRandomNumber(0.1,14.3),getRandomNumber(0.3,4.5),getRandomNumber(0.1,13.5),getRandomNumber(0.1,2.7),getRandomNumber(0.2,3.5));
+    void* statstability = createStaticStability(getRandomNumber(0,10),getRandomNumber(0,10),getRandomNumber(0,10),getRandomNumber(0,10),getRandomNumber(0,10));
     double DelaminationR_result = calculateDelaminationResistance(statstability);
     double HorizontalF_result = calculateHorizontalForce(statstability);
     double StabilityFa = calculateStabilityFactor(statstability);
     std::cout<<"------------------"<<std::endl;
-    std::cout << "Stability Factor: " << calculateStabilityFactor(statstability) << std::endl;
+    std::cout << "Stability Factor: " << calculateStabilityFactor(statstability) << std::endl; // не измеряется какой-то конкретной величиной, то есть метод оценки 
     std::cout<<"------------------"<<std::endl;
     destroyStaticStability(statstability);
 
     // Работа с библиотекой SlopeSafety
-    void* slopeSafety = createSlopeSafetyCalculator(getRandomNumber(0.1,4.5),getRandomNumber(0.1,9.8),getRandomNumber(0.2,5.6),getRandomNumber(0.1,2.5));
+    void* slopeSafety = createSlopeSafetyCalculator(getRandomNumber(0,25),getRandomNumber(0,25),getRandomNumber(0,25),getRandomNumber(0,25));
     double slopeSafety_result = calculateSafetyFactor(slopeSafety);
-    std::cout<<"Slope safety: "<<slopeSafety_result<<std::endl;
+    std::cout<<"Slope safety: "<<slopeSafety_result<<std::endl; // не измеряется какой-то конкретной величиной, то есть метод оценки
     std::cout<<"------------------"<<std::endl;
     
     // Закрываем библиотеки
