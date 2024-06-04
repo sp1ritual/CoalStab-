@@ -51,7 +51,7 @@ double getRandomNumber(double min, double max) {
     return dis(gen);
 }
 void saveToFile(double Dstability_result, double safety_result, double slope_result, double stability_result, double tension_result, double StabilityFa, double slopeSafety_result) {
-    std::ofstream file("CoalStab_Data.txt", std::ios::app);
+    std::ofstream file("idk/output info/CoalStab_Data.txt", std::ios::app);
     if (!file.is_open()) {
         std::cerr << "Unable to open file!" << std::endl;
         return;
@@ -73,7 +73,7 @@ void saveToDatabase(double Dstability_result, double safety_result, double slope
     sqlite3* db;
     char* err_message = 0;
 
-    int rc = sqlite3_open("CoalStab_Data.db", &db);
+    int rc = sqlite3_open("idk/output info/CoalStab_Data.db", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return;
@@ -117,7 +117,7 @@ snprintf(sql_insert, sizeof(sql_insert), "INSERT INTO StabilityData (DynamicStab
 }
 int main() {
     // Загружаем либу DynamicStability
-    void* handle1 = dlopen("./libdlyb.dylib", RTLD_LAZY);
+    void* handle1 = dlopen("idk/dynamic lib/libdlyb.dylib", RTLD_LAZY);
     if (!handle1) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -136,7 +136,7 @@ int main() {
     }
 
     // Загружаем библиотеку SafetyFactor
-    void* handle2 = dlopen("./libsafetyfactor.dylib", RTLD_LAZY);
+    void* handle2 = dlopen("idk/dynamic lib/libsafetyfactor.dylib", RTLD_LAZY);
     if (!handle2) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -156,7 +156,7 @@ int main() {
     }
 
     // Загрузка библиотеки SlopeAngle
-    void* handle3 = dlopen("./libslopeangle.dylib", RTLD_LAZY);
+    void* handle3 = dlopen("idk/dynamic lib/libslopeangle.dylib", RTLD_LAZY);
     if (!handle3) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -175,7 +175,7 @@ int main() {
     }
 
     // Загрузка библиотеки Stability
-    void* handle4 = dlopen("./libstability.dylib", RTLD_LAZY);
+    void* handle4 = dlopen("idk/dynamic lib/libstability.dylib", RTLD_LAZY);
     if (!handle4) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -194,7 +194,7 @@ int main() {
         return 1;
     }
     // Загрузка либы Tensiondumps
-    void* handle5 = dlopen("./libtension.dylib", RTLD_LAZY);
+    void* handle5 = dlopen("idk/dynamic lib/libtension.dylib", RTLD_LAZY);
     if (!handle5) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -214,7 +214,7 @@ int main() {
         return 1;
     }
     // Загрузка либы StaticStability
-    void* handle6 = dlopen("./libstaticstability.dylib", RTLD_LAZY);
+    void* handle6 = dlopen("idk/dynamic lib/libstaticstability.dylib", RTLD_LAZY);
     if (!handle6) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
@@ -236,7 +236,7 @@ int main() {
         return 1;
     }
     // Загружаем либы SlopeSafety
-    void* handle7 = dlopen("./libslopesafety.dylib", RTLD_LAZY);
+    void* handle7 = dlopen("idk/dynamic lib/libslopesafety.dylib", RTLD_LAZY);
     if (!handle7) {
         std::cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
