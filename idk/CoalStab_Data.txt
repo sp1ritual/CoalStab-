@@ -1,0 +1,108 @@
+Date and Time: Sun Jun  2 16:32:53 2024
+Dynamic Stability Factor: 23.5095
+Safety Factor: 1.25338
+Slope Angle: 0.638661
+Stability: 0.109928
+Tension: 0.426986
+Stability Factor: 4.10139
+Slope Safety: 725.03
+---------------------------------------------
+Date and Time: Sun Jun  2 16:33:05 2024
+Dynamic Stability Factor: 6.43276
+Safety Factor: 2.21504
+Slope Angle: 0.244179
+Stability: 0.3161
+Tension: 0.0523213
+Stability Factor: 70.6547
+Slope Safety: 275.433
+---------------------------------------------
+Date and Time: Sun Jun  2 16:33:35 2024
+Dynamic Stability Factor: 12.417
+Safety Factor: 1.3719
+Slope Angle: 0.370955
+Stability: 0.0928913
+Tension: 0.667469
+Stability Factor: 154.849
+Slope Safety: 149.948
+---------------------------------------------
+Date and Time: Sun Jun  2 16:33:50 2024
+Dynamic Stability Factor: 17.2304
+Safety Factor: 2.61204
+Slope Angle: 1.04453
+Stability: 1.72639
+Tension: 0.383404
+Stability Factor: 3.58179
+Slope Safety: 372.334
+---------------------------------------------
+Date and Time: Sun Jun  2 17:03:21 2024
+Dynamic Stability Factor: 11.4706
+Safety Factor: 1.24353
+Slope Angle: 0.362724
+Stability: 1.3854
+Tension: 1.56765
+Stability Factor: 3.51353
+Slope Safety: 206.376
+---------------------------------------------
+Date and Time: Sun Jun  2 17:09:25 2024
+Dynamic Stability Factor: 3.57331
+Safety Factor: 0.0795999
+Slope Angle: 0.371776
+Stability: 0.873503
+Tension: 0.153153
+Stability Factor: 88.2612
+Slope Safety: 306.057
+---------------------------------------------
+Date and Time: Sun Jun  2 17:18:44 2024
+Dynamic Stability Factor: 8.671
+Safety Factor: 0.138504
+Slope Angle: 0.395948
+Stability: 0.434783
+Tension: 0.571148
+Stability Factor: 6.46297
+Slope Safety: 19.1288
+---------------------------------------------
+Date and Time: Sun Jun  2 17:18:56 2024
+Dynamic Stability Factor: 20.1937
+Safety Factor: 0.215935
+Slope Angle: 0.278759
+Stability: 0.345058
+Tension: 2.90024
+Stability Factor: 0.417356
+Slope Safety: 207.726
+---------------------------------------------
+Date and Time: Sun Jun  2 17:19:13 2024
+Dynamic Stability Factor: 22.5228
+Safety Factor: 1.06626
+Slope Angle: 0.551147
+Stability: 3.29276
+Tension: 0.386828
+Stability Factor: 44.5078
+Slope Safety: 1114.5
+---------------------------------------------
+Date and Time: Sun Jun  2 20:23:41 2024
+Dynamic Stability Factor: 17.2558
+Safety Factor: 0.0804983
+Slope Angle: 0.720388
+Stability: 2.15157
+Tension: 15.8277
+Stability Factor: 5.4844
+Slope Safety: 230.137
+---------------------------------------------
+Date and Time: Sun Jun  2 20:26:31 2024
+Dynamic Stability Factor: 0.341187
+Safety Factor: 0.870356
+Slope Angle: 0.26869
+Stability: 2.88794
+Tension: 0.349532
+Stability Factor: 79.1856
+Slope Safety: 38.9496
+---------------------------------------------
+Date and Time: Mon Jun  3 21:37:33 2024
+Dynamic Stability Factor: 48.6686
+Safety Factor: 2.94347
+Slope Angle: 1.35483
+Stability: 1.92548
+Tension: 0.623638
+Stability Factor: 0.848361
+Slope Safety: 177.34
+---------------------------------------------
