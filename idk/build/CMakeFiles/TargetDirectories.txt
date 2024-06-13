@@ -1,3 +1,0 @@
-/Users/admi/Documents/idk/build/CMakeFiles/CoalStab.dir
-/Users/admi/Documents/idk/build/CMakeFiles/edit_cache.dir
-/Users/admi/Documents/idk/build/CMakeFiles/rebuild_cache.dir
